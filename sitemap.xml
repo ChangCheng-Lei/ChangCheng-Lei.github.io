@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/06/08/build-hexo-with-docker/</loc>
+    
+    <lastmod>2019-06-08T07:12:28.705Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/search/index.html</loc>
     
     <lastmod>2019-06-07T08:37:57.218Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2019-06-07T08:37:45.588Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/06/07/hello-world/</loc>
-    
-    <lastmod>2019-06-07T08:16:11.140Z</lastmod>
     
   </url>
   

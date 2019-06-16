@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-08T07:31:03.975Z</updated>
+  <updated>2019-06-16T08:56:41.341Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spark学习（1）安装Spark</title>
+    <link href="http://yoursite.com/2019/06/16/sparkInstall/"/>
+    <id>http://yoursite.com/2019/06/16/sparkInstall/</id>
+    <published>2019-06-16T08:18:16.000Z</published>
+    <updated>2019-06-16T08:56:41.341Z</updated>
+    
+    <content type="html"><![CDATA[<div class="toc"><!-- toc --><ul><li><a href="#spark-jian-jie">Spark 简介</a></li><li><a href="#spark-an-zhuang">Spark 安装</a><ul><li><a href="#cai-yong-an-zhuang-bao-de-fang-shi-an-zhuang">采用安装包的方式安装</a><ul><li><a href="#linux-shang-an-zhuang-spark">LINUX 上安装Spark</a></li><li><a href="#windows-an-zhuang-spark">Windows 安装Spark</a></li><li><a href="#cai-yong-yuan-ma-fang-shi-an-zhuang">采用源码方式安装</a></li></ul></li></ul></li></ul><!-- tocstop --></div><h2><span id="spark-jian-jie">Spark 简介</span><a href="#spark-jian-jie" class="header-anchor"></a></h2><blockquote><p>Apache Spark™ is a unified analytics engine for large-scale data processing.<br>若需要查询更多信息，访问Spark <a href="https://spark.apache.org/" target="_blank" rel="noopener">官方网站</a><br>若需要查询Spark源码，访问Spark <a href="https://github.com/apache/spark" target="_blank" rel="noopener">Git Hub</a></p></blockquote><p>Spark 是一个快速且通用的集群计算平台</p><ul><li>Spark 是快速的 Spark 扩充了流行MapReduce 计算模型， 基于内存计算</li><li>Spark 通用的， 容纳了其它分布式系统拥有的功能，批处理，迭代式计算，交互式查询和流处理，降低集群维护成本</li><li>高度开放的，提供了Python, Java等高级API</li></ul><h2><span id="spark-an-zhuang">Spark 安装</span><a href="#spark-an-zhuang" class="header-anchor"></a></h2><p>Spark 安装方式提供两种安装模式，<strong>编译源码安装</strong> 和 <strong>安装包方式安装</strong>示例安装系统为windows，Linux , 参照对应操作系统安装即可</p><p>系统环境要求</p><ol><li><strong>安装JAVA JDK1.8</strong><br>为什么需要安装JAVA JDK1.8 ？</li></ol><ul><li>Spark 是采用Scala 语言编写，Scala语言是运行在JVM上的</li><li>Python API（PySpark） 与Spark进行交互, PySpark 是在<em>Spark‘s JAVA API</em>之上的封装,JAVA API 也是需要JDK</li><li>JAVA JDK 版本要求是1.8</li></ul><h3><span id="cai-yong-an-zhuang-bao-de-fang-shi-an-zhuang">采用安装包的方式安装</span><a href="#cai-yong-an-zhuang-bao-de-fang-shi-an-zhuang" class="header-anchor"></a></h3><ol><li>打开Spark <a href="https://spark.apache.org/" target="_blank" rel="noopener">官方网站</a>，点击DownLoad, 这里已经Spark 已经集成成功了hadoop组件，可以直接使用<br><img src="https://i.loli.net/2019/06/16/5d05fd9d8fa2f41078.png" alt="1.png"></li></ol><h4><span id="linux-shang-an-zhuang-spark">LINUX 上安装Spark</span><a href="#linux-shang-an-zhuang-spark" class="header-anchor"></a></h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@Amy ~]<span class="comment"># mkdir download</span></span><br><span class="line">[root@Amy ~]<span class="comment"># cd download/</span></span><br><span class="line"><span class="comment">#wget &lt;spark_url&gt; //使用wget 命令下载spark</span></span><br><span class="line">[root@Amy download]<span class="comment">#</span></span><br><span class="line">wget http://mirror.bit.edu.cn/apache/spark/spark-<span class="number">2.4</span>.<span class="number">3</span>/spark-<span class="number">2.4</span>.<span class="number">3</span>-bin-hadoop2.<span class="number">7</span>.tgz</span><br><span class="line">mkdir /opt/apache-spark <span class="comment"># spakr 解压目录</span></span><br><span class="line">[root@Amy download]<span class="comment"># tar xvzf spark-2.4.3-bin-hadoop2.7.tgz -C /opt/apache-spark/</span></span><br></pre></td></tr></table></figure><ol start="3"><li>配置环境变量<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@Amy download]<span class="comment"># cd /opt/apache-spark/spark-2.4.3-bin-hadoop2.7/</span></span><br><span class="line">[root@Amy spark-<span class="number">2.4</span>.<span class="number">3</span>-bin-hadoop2.<span class="number">7</span>]<span class="comment"># vim ~/.bashrc</span></span><br><span class="line"><span class="comment">#将Spark 环境配置加入</span></span><br><span class="line"><span class="comment">#export SPARK_HOME=/opt/apache-spark/spark-2.4.3-bin-hadoop2.7</span></span><br><span class="line"><span class="comment">#export PATH=$PATH:$SPARK_HOME/bin</span></span><br><span class="line"><span class="comment">#保存文件并退出</span></span><br><span class="line">[root@Amy spark-<span class="number">2.4</span>.<span class="number">3</span>-bin-hadoop2.<span class="number">7</span>]<span class="comment"># source ~/.bashrc # 使得环境变量生效</span></span><br><span class="line">[root@Amy spark-<span class="number">2.4</span>.<span class="number">3</span>-bin-hadoop2.<span class="number">7</span>]<span class="comment"># pyspark # 执行pySpark 命令</span></span><br></pre></td></tr></table></figure></li></ol><p>pySpark 命令正确执行结果如下<br><img src="https://i.loli.net/2019/06/16/5d05fd9d6762132822.png" alt="2.png"></p><h4><span id="windows-an-zhuang-spark">Windows 安装Spark</span><a href="#windows-an-zhuang-spark" class="header-anchor"></a></h4><ol><li><p>通过浏览下载刚刚选择的Spark 版本</p></li><li><p>将Spark解压到需要保存的文件目录<br>这里以D盘根目录为例<br><img src="https://i.loli.net/2019/06/16/5d05fd9db812640075.png" alt="3.png"></p><blockquote><p><strong>注意</strong> Spark 的安装与其它操作系统没有区别，但是由于Windows操作系统采用的是NTFS格式，hadoop 不能完全兼容所需，所以需要稍微进行处理</p></blockquote></li><li><p>下载<a href="https://github.com/jleetutorial/sparkTutorial/blob/winutils/winutils.exe" target="_blank" rel="noopener">工具</a><br>保存路径到<em>D:\hadoop\bin</em>（这里需要注意，后续配置环境变量需要）</p></li><li><p>配置环境变量</p></li></ol><ul><li>配置<em>HADOOP_HOME</em> 为 <em>D:\hadoop</em>（与上一步hadoop工具一致）</li><li>配置<em>SPARK_HOME *为</em>D:\spark-2.4.3-bin-hadoop2.7*（Spark 保存路径）</li><li>添加Hadoop 和Spark 到Path 中</li></ul><ol start="4"><li>校验安装是否成功</li></ol><ul><li>新创建一个文件目录<em>D:\tmp\hive</em>，使用工具修改文件夹格式<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;winutils chmod <span class="number">777</span> D:\tmp\hive</span><br><span class="line">C:\Users\Administrator&gt;pyspark</span><br></pre></td></tr></table></figure></li></ul><p><img src="https://i.loli.net/2019/06/16/5d05fd9d7e00675647.png" alt="4.png"></p><h4><span id="cai-yong-yuan-ma-fang-shi-an-zhuang">采用源码方式安装</span><a href="#cai-yong-yuan-ma-fang-shi-an-zhuang" class="header-anchor"></a></h4><p>详细源码安装<a href="http://spark.apache.org/docs/latest/building-spark.html" target="_blank" rel="noopener">官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;toc&quot;&gt;
+
+&lt;!-- toc --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#spark-jian-jie&quot;&gt;Spark 简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#spark-an-zhuang&quot;&gt;Spark 安装&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+      <category term="Spark" scheme="http://yoursite.com/tags/Spark/"/>
+    
+      <category term="大数据" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>制作HEXO Docker 镜像</title>

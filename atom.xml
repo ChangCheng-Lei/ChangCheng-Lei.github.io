@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-10T01:25:58.328Z</updated>
+  <updated>2019-07-10T06:07:07.552Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,24 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>lcc-aaa</title>
-    <link href="http://yoursite.com/2019/07/09/lcc-aaa/"/>
-    <id>http://yoursite.com/2019/07/09/lcc-aaa/</id>
-    <published>2019-07-09T10:40:08.000Z</published>
-    <updated>2019-07-10T01:25:58.328Z</updated>
+    <title>HEXO 使用本地图片</title>
+    <link href="http://yoursite.com/2019/07/10/hexo-using-local-image/"/>
+    <id>http://yoursite.com/2019/07/10/hexo-using-local-image/</id>
+    <published>2019-07-10T03:15:56.000Z</published>
+    <updated>2019-07-10T06:07:07.552Z</updated>
     
-    <content type="html"><![CDATA[<p>ddddddddddddddddddddddd<br><img src="/2019/07/09/lcc-aaa/aa.png" alt="Alt text"></p>]]></content>
+    <content type="html"><![CDATA[<div class="toc"><!-- toc --><ul><li><a href="#hexo-shi-yong-ben-di-tu-pian">HEXO 使用本地图片</a><ul><li><a href="#hexo-asset-image-cha-jian-shi-yong">hexo-asset-image 插件使用</a><ul><li><a href="#an-zhuang-hexo-asset-image-cha-jian">安装hexo-asset-image 插件</a></li><li><a href="#pei-zhi-config-wen-jian">配置_config文件</a></li><li><a href="#chuang-jian-xin-de-wen-zhang">创建新的文章</a></li><li><a href="#zai-md-wen-jian-zhong-shi-yong-tu-pian">在md文件中使用图片</a></li></ul></li></ul></li></ul><!-- tocstop --></div><h2><span id="hexo-shi-yong-ben-di-tu-pian">HEXO 使用本地图片</span><a href="#hexo-shi-yong-ben-di-tu-pian" class="header-anchor"></a></h2><p>刚开始使用HEXO的时候，为了简单使用，将图片直接存放到图床上面，之前使用的是 <a href="https://sm.ms/" target="_blank" rel="noopener">https://sm.ms/</a>图床工具，<br>但是后来考虑到如果图床保留的图片都失效了，这会导致图片全部不能正常显示，所以就考虑转换到使用本地图片，这样不会导致图片失效<br>这里使用<strong>hexo-asset-image</strong> 插件</p><h3><span id="hexo-asset-image-cha-jian-shi-yong">hexo-asset-image 插件使用</span><a href="#hexo-asset-image-cha-jian-shi-yong" class="header-anchor"></a></h3><p>hexo-asset-image 是一个开源插件， github 地址可以访问<a href="https://github.com/xcodebuild/hexo-asset-image，" target="_blank" rel="noopener">https://github.com/xcodebuild/hexo-asset-image，</a> 使用起来非常方便</p><h4><span id="an-zhuang-hexo-asset-image-cha-jian">安装hexo-asset-image 插件</span><a href="#an-zhuang-hexo-asset-image-cha-jian" class="header-anchor"></a></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br><span class="line">#或者</span><br><span class="line">npm install https:<span class="comment">//github.com/CodeFalling/hexo-asset-image --save</span></span><br></pre></td></tr></table></figure><h4><span id="pei-zhi-config-wen-jian">配置_config文件</span><a href="#pei-zhi-config-wen-jian" class="header-anchor"></a></h4><p>将_config文件的<em>post_asset_folder</em> 设置为true</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder:<span class="keyword">true</span></span><br></pre></td></tr></table></figure><h4><span id="chuang-jian-xin-de-wen-zhang">创建新的文章</span><a href="#chuang-jian-xin-de-wen-zhang" class="header-anchor"></a></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> hexo-using-local-image</span><br></pre></td></tr></table></figure><p>执行以上命令会创建一个hexo-using-local-image.md文件和hexo-using-local-image文件夹， hexo-using-local-image是用于存放图片<br>目录结构如下</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source</span><br><span class="line">|---_posts</span><br><span class="line">    |--- hexo-using-local-image.md</span><br><span class="line">    |--- hexo-using-local-image</span><br></pre></td></tr></table></figure><h4><span id="zai-md-wen-jian-zhong-shi-yong-tu-pian">在md文件中使用图片</span><a href="#zai-md-wen-jian-zhong-shi-yong-tu-pian" class="header-anchor"></a></h4><p>按照markdown 格式使用图片</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![本地图片](hexo-using-local-image/hexo-banner.jpg)</span><br></pre></td></tr></table></figure><p><img src="/2019/07/10/hexo-using-local-image/hexo-banner.jpg" alt="本地图片"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;ddddddddddddddddddddddd&lt;br&gt;&lt;img src=&quot;/2019/07/09/lcc-aaa/aa.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+        &lt;div class=&quot;toc&quot;&gt;
 
+&lt;!-- toc --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-shi-yong-ben-di-tu-pian&quot;&gt;HEXO 使用本地图片&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-asset-image-cha-jia
       
     
     </summary>
     
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   

@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/21/lucene-java-api/</loc>
+    
+    <lastmod>2019-07-21T09:12:39.066Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/21/lucene-basic/</loc>
+    
+    <lastmod>2019-07-21T09:12:39.065Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/20/dubbo-registry/</loc>
+    
+    <lastmod>2019-07-20T09:23:02.945Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/10/hexo-using-local-image/</loc>
     
-    <lastmod>2019-07-10T06:07:07.552Z</lastmod>
+    <lastmod>2019-07-20T07:06:56.673Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/20/dubbo-configurations/</loc>
+    
+    <lastmod>2019-07-20T06:59:24.451Z</lastmod>
     
   </url>
   
